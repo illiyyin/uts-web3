@@ -13,8 +13,8 @@ function ArticleCard(prop) {
           {categoryName}
         </strong>
         <h3 className="mb-0">{title}</h3>
-        <div className="mb-1 text-muted">{postedAt}</div>
-        <p className="card-text mb-auto">{summary}</p>
+        <div className="mb-1 text-muted">{this.postedAt}</div>
+        <p className="card-text mb-auto">{this.summary}</p>
         <Link to={"/blog/"+ id} className="stretched-link">
           Continue reading
         </Link>
@@ -25,7 +25,7 @@ function ArticleCard(prop) {
           width="200"
           height="250"
           aria-label="Placeholder: Thumbnail"
-          src={imageUrl}
+          src={this.imageUrl}
           alt={title}
         />
       </div>
