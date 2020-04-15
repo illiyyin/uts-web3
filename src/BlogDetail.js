@@ -1,4 +1,5 @@
 import React from "react";
+import "./setupProxy.js";
 
 function ArticleCard(props) {
   const  {title, summary, imageUrl}  = props;
@@ -95,3 +96,4 @@ class DetailBlog extends React.Component {
   }
 }
 
+export default DetailBlog;

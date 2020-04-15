@@ -2,10 +2,10 @@ import React from "react";
 import {
   Link
 } from "react-router-dom";
-import BlogDetail from "./BlogDetail";
+// import BlogDetail from "./BlogDetail";
 
 function ArticleCard(prop) {
-  const { id, categoryName, title } = prop;
+  const { id, categoryName, title, postedAt, summary, imageUrl } = prop;
   return (
     <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div className="col p-4 d-flex flex-column position-static">
@@ -13,8 +13,8 @@ function ArticleCard(prop) {
           {categoryName}
         </strong>
         <h3 className="mb-0">{title}</h3>
-        <div className="mb-1 text-muted">{this.postedAt}</div>
-        <p className="card-text mb-auto">{this.summary}</p>
+        <div className="mb-1 text-muted">{postedAt}</div>
+        <p className="card-text mb-auto">{summary}</p>
         <Link to={"/blog/"+ id} className="stretched-link">
           Continue reading
         </Link>
@@ -25,7 +25,7 @@ function ArticleCard(prop) {
           width="200"
           height="250"
           aria-label="Placeholder: Thumbnail"
-          src={this.imageUrl}
+          src={imageUrl}
           alt={title}
         />
       </div>
@@ -78,6 +78,11 @@ class Blog extends React.Component {
           <div className="col-md-6" key={index}>
             <ArticleCard
               id={article.id}
+              categoryName={article.categoryName}
+              postedAt={article.postedAt}
+              summary={article.summary}
+              imageUrl={article.imageUrl}
+              title={article.title}
             />
           </div>
         ))}
